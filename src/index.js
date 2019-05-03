@@ -18,8 +18,8 @@ files.map(function(value, index) {
 let arrStr = JSON.stringify(arrOfObjects);
 let photoObj = `{"name": "My Daily Photos", "array": ${arrStr}}`;
 let jsonResult = JSON.parse(photoObj);
-console.log('---- json results ------');
-console.log(jsonResult);
+//console.log('---- json results ------');
+//console.log(jsonResult);
 
 const app = express();
 //app.use(cors());
