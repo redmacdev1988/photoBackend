@@ -5,14 +5,18 @@ import bodyParser from 'body-parser';
 import express from 'express';
 import uuidv4 from 'uuid/v4';
 import fs from 'fs';
+var path = require('path');
+
 
 console.log('------ start -------');
+
+
 var files = fs.readdirSync('daily-photos/');
 var arrOfObjects = [];
 files.map(function(value, index) {
   arrOfObjects.push({
     title: value,
-    url:  'http://139.199.66.12/daily-photos/' + value
+    url:  'http://localhost:6680/daily-photos/' + value
   })
 });
 let arrStr = JSON.stringify(arrOfObjects);
@@ -38,8 +42,7 @@ app.listen(process.env.PORT, () =>
 
 app.get('/', (req, res) => {
   console.log('starting up the app');
-  //res.send('Hello World!...the secret is: ' + process.env.MY_SECRET);
-  res.send(JSON.stringify(jsonResult));
+  return res.send(JSON.stringify(jsonResult));
 });
 
 app.get('/test', (req, res) => {
@@ -48,6 +51,11 @@ app.get('/test', (req, res) => {
 
 app.get('/users', (req, res) => {
   return res.send('GET HTTP method on user resource');
+});
+
+app.get('/daily-photos/:fileName', (req, res) => {
+  console.log(`------ you want file ------ ${req.params.fileName}`);
+  return res.sendFile(path.resolve(`daily-photos/${req.params.fileName}`));
 });
 
 // ASC 

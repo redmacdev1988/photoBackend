@@ -1,14 +1,13 @@
 {
   "name": "AvltreeBackend",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ricky Tsao <Ricky_Tsao@emap.com>",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.4.3",
@@ -18,9 +17,20 @@
   },
   "dependencies": {
     "body-parser": "^1.19.0",
+    "connect": "^3.7.0",
     "cors": "^2.8.5",
     "dotenv": "^7.0.0",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
+    "serve-static": "^1.14.1",
     "uuid": "^3.3.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redmacdev1988/photoBackend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/redmacdev1988/photoBackend/issues"
+  },
+  "homepage": "https://github.com/redmacdev1988/photoBackend#readme",
+  "description": ""
 }
