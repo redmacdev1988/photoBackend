@@ -14,10 +14,16 @@ console.log('------ start -------');
 var files = fs.readdirSync('daily-photos/');
 var arrOfObjects = [];
 files.map(function(value, index) {
-  arrOfObjects.push({
-    title: value,
-    url:  'http://localhost:6680/daily-photos/' + value
-  })
+
+  console.log(value);
+  if (value.charAt(0) === '.') {} 
+  else {
+    arrOfObjects.push({
+      title: value,
+      url:  'http://localhost:6680/daily-photos/' + value
+    });
+  }
+
 });
 let arrStr = JSON.stringify(arrOfObjects);
 let photoObj = `{"name": "My Daily Photos", "array": ${arrStr}}`;
