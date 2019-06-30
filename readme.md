@@ -17,6 +17,7 @@ yarn start
 ```
 wait a bit while the app starts up. Then you will be able to see a list of images in the console like so:
 
+```
 $ nodemon --exec babel-node src/index.js
 [nodemon] 1.19.1
 [nodemon] to restart at any time, enter `rs`
@@ -31,6 +32,7 @@ beijing-palace-walls.jpg
 ...
 ...
 ...
+```
 
 Your web service is now ready.
 
